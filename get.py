@@ -12,6 +12,6 @@ virtual_memory_total = str(int(virtual_memory_total_match.group(1).replace(",", 
 virtual_memory_available = str(int(virtual_memory_available_match.group(1).replace(",", "")))+"\n"
 with open("get.txt","w+") as f:
     f.write(physical_memory_total)
-    f.write(physical_memory_available)
+    f.write(str(int(physical_memory_total)-int(physical_memory_available))+"\n")
     f.write(virtual_memory_total)
     f.write(virtual_memory_available)
